@@ -3283,3 +3283,20 @@ html[data-mvdh-dev-shell] #modal-container :is(input,button,a,.rag-modal-close):
   #mvdh-dev-page .mvdh-agent-card-portrait img { height:auto; aspect-ratio:2 / 3; }
   #mvdh-dev-page .vg-contact-modal-portrait .vg-meet-realtors-photo-link { left:10px; bottom:10px; max-width:calc(100% - 20px); padding:10px 12px !important; font-size:12px; white-space:nowrap; }
 }
+
+/* Final override: button glyphs never carry extra right-side spacing.
+ * The shell scope also covers native overlays appended outside the CMS wrapper. */
+html[data-mvdh-dev-shell] body :is(button,a,summary,[role="button"]) :is(i,svg,.mvdh-cms-icon,.fa,.fas,.far,.fab,.fal,.fat,.fad,.fa-solid,.fa-regular,.fa-brands,.fa-light,.fa-thin,.fa-duotone,.svg-inline--fa),
+html[data-mvdh-dev-shell] body :is(button,a,summary,[role="button"]) :is(i,svg,.mvdh-cms-icon,.fa,.fas,.far,.fab,.fal,.fat,.fad,.fa-solid,.fa-regular,.fa-brands,.fa-light,.fa-thin,.fa-duotone,.svg-inline--fa)::before,
+html[data-mvdh-dev-shell] body :is(button,a,summary,[role="button"]) :is(i,svg,.mvdh-cms-icon,.fa,.fas,.far,.fab,.fal,.fat,.fad,.fa-solid,.fa-regular,.fa-brands,.fa-light,.fa-thin,.fa-duotone,.svg-inline--fa)::after,
+html[data-mvdh-dev-shell] body :is(button,summary,[role="button"],a.button,a.fa,a.fas,a.far,a.fab)::before {
+  padding-right:0 !important;
+  padding-inline-end:0 !important;
+  margin-right:0 !important;
+  margin-inline-end:0 !important;
+}
+/* The CMS retains icons with an NBSP. Font Awesome gives that blank 1/4 em;
+ * collapse only its word advance while preserving the visible glyph size. */
+html[data-mvdh-dev-shell] body .mvdh-cms-icon {
+  word-spacing:-.25em !important;
+}
