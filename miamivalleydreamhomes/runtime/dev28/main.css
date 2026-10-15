@@ -1951,6 +1951,13 @@ html[data-mvdh-dev-shell] #modal-container .rg-modal-scheduletour .rag-modal-clo
 .bidx-reference-search .bidx-map-draw-controls button:focus-visible{outline:3px solid #b3482e;outline-offset:2px}
 .bidx-reference-search .bidx-map-draw-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .bidx-reference-search .bidx-map-draw-status:empty{display:none}
+.bidx-reference-search .bidx-location-pills{flex-wrap:nowrap}
+.bidx-reference-search .bidx-location-pills>.bidx-tb-loc-pill{max-width:130px;min-width:0;flex:0 1 auto}
+.bidx-reference-search .bidx-location-more-toggle{flex-shrink:0;min-height:36px;padding:6px 8px;background:var(--paper,#f5f2e8);color:var(--ink,#163e53);border:1px solid var(--line,#bdc9c3);border-radius:18px;font:600 12px/1.3 var(--sans,sans-serif);white-space:nowrap}
+.bidx-reference-search .bidx-tb-loc-field:has(.bidx-location-more-toggle) .bidx-tb-loc-input{min-width:30px}
+.bidx-reference-search .bidx-location-more-popover{position:absolute;top:calc(100% + 6px);left:0;z-index:1004;display:flex;flex-wrap:wrap;gap:8px;min-width:260px;max-width:min(420px,calc(100vw - 32px));padding:14px;background:#fff;border:1px solid var(--line,#bdc9c3);box-shadow:0 8px 28px #0002}
+.bidx-reference-search .bidx-location-clear-all{flex-basis:100%;min-height:40px;padding:7px 0;text-align:left;font:600 13px/1.4 var(--sans,sans-serif);color:var(--ink,#163e53);text-decoration:underline;background:transparent;border:0}
+.bidx-reference-search :is(.bidx-location-more-toggle,.bidx-location-clear-all):focus-visible{outline:3px solid var(--accent,#b3482e);outline-offset:2px}
 .bidx-reference-search .bidx-map-drawing{cursor:crosshair;touch-action:none}
 .bidx-draw-vertex{background:#fff;border:2px solid #153e53;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#153e53;box-shadow:0 1px 4px #0004}
 .bidx-reference-search .bidx-feed-status-select{min-height:44px;max-width:100%;font:inherit;color:#153e53;background:#fff;border:1px solid #153e53;padding:8px 32px 8px 12px}
@@ -3479,6 +3486,12 @@ html[data-mvdh-dev-shell] body .mvdh-cms-icon {
   #mvdh-dev-page .mvdh-hoa-directory-grid { grid-template-columns:1fr; }
 }
 
+/* Keep the home location suggestions above the following listing section. */
+#mvdh-dev-page .vg-home-page .hero-riverwork{position:relative;overflow:visible}
+#mvdh-dev-page .vg-home-page .hero-riverwork:has(.vg-hero-dropdown:not([hidden])){z-index:30}
+#mvdh-dev-page .vg-home-page .riverwork-search{position:relative;z-index:2;overflow:visible}
+#mvdh-dev-page .vg-hero-dropdown{max-height:min(360px,60dvh);overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;touch-action:pan-y;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+
 /* review27-account.css */
 /* Applies only to the explicitly selected development presentation. */
 html[data-mvdh-dev-shell] .mvdh-review27-account{position:relative;flex:none;color:var(--ink,#153e53)}
@@ -3505,3 +3518,33 @@ html[data-mvdh-dev-shell] #modal-container .rag-modal-window .v3-disclaimer a{te
   html[data-mvdh-dev-shell] .mvdh-account-toggle [data-account-label]{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
   html[data-mvdh-dev-shell] .mvdh-account-panel{right:-4px}
 }
+
+/* The listing account form is a dialog, so it must not inherit page layout. */
+html[data-mvdh-dev-shell] .bidx-auth-modal{box-sizing:border-box;width:min(100%,510px);max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain;padding:44px 28px 26px}
+html[data-mvdh-dev-shell] .bidx-auth-modal h2{font-size:32px;line-height:1.12;margin:0 24px 16px 0}
+html[data-mvdh-dev-shell] .bidx-auth-modal>p{margin:0 0 18px;font-size:14px;line-height:1.6}
+html[data-mvdh-dev-shell] .bidx-auth-actions{display:grid;gap:12px;margin:20px 0}
+html[data-mvdh-dev-shell] .bidx-auth-actions>form.bidx-reference-search{display:grid;gap:18px;margin:0 0 4px;padding:0;border:0;background:transparent;min-height:0}
+html[data-mvdh-dev-shell] .bidx-auth-actions .bidx-fm-field{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;font:500 14px/1.4 var(--sans,Arial,sans-serif);color:var(--ink,#153e53)}
+html[data-mvdh-dev-shell] .bidx-auth-actions .bidx-fm-input{display:block;box-sizing:border-box;width:100%;height:48px;min-height:48px;margin:0;padding:11px 12px;border:1px solid #aab8bb;border-radius:3px;background:white;color:var(--ink,#153e53);font:400 16px/1.4 var(--sans,Arial,sans-serif)}
+html[data-mvdh-dev-shell] .bidx-auth-actions .bidx-fm-input:focus-visible{outline:2px solid var(--ink,#153e53);outline-offset:2px}
+html[data-mvdh-dev-shell] .bidx-auth-actions :is(.bidx-fm-search-btn,.bidx-auth-primary,[data-account-view],[data-account-retry]){display:flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:46px;width:100%;margin:0;padding:11px 14px;border:1px solid var(--ink,#153e53);border-radius:3px;background:transparent;color:var(--ink,#153e53);font:600 14px/1.4 var(--sans,Arial,sans-serif);text-align:center;text-decoration:none;cursor:pointer}
+html[data-mvdh-dev-shell] .bidx-auth-actions :is(.bidx-fm-search-btn,.bidx-auth-primary){background:var(--accent,#b3482e);border-color:var(--accent,#b3482e);color:white}
+html[data-mvdh-dev-shell] .bidx-auth-actions [data-account-view=reset]{min-height:44px;border-color:transparent;text-decoration:underline;text-underline-offset:3px;font-weight:400}
+html[data-mvdh-dev-shell] .bidx-auth-modal>a{display:block;padding:7px 0;font-size:14px;line-height:1.5;text-underline-offset:3px}
+html[data-mvdh-dev-shell] .bidx-auth-modal .bidx-auth-note:empty{display:none}
+/* Native login keeps its controls and handlers; place submit before reset. */
+html[data-mvdh-dev-shell] #modal-container .rg-modal-signin form.top_captions{display:flex;flex-direction:column;gap:14px;margin:22px 0}
+html[data-mvdh-dev-shell] #modal-container .rg-modal-signin form.top_captions>input:not([type=hidden]){box-sizing:border-box;float:none;width:100%;margin:0;min-height:48px}
+html[data-mvdh-dev-shell] #modal-container .rg-modal-signin form.top_captions>input[type=submit]{order:2;display:block;width:100%;margin:4px 0 0}
+html[data-mvdh-dev-shell] #modal-container .rg-modal-signin form.top_captions>a{order:3;align-self:flex-start;display:block;padding:4px 0;line-height:1.5}
+html[data-mvdh-dev-shell] #modal-container .rg-modal-signin form.top_captions>br{display:none}
+html[data-mvdh-dev-shell] #modal-container .rg-modal-signin .miranda-lb>h2:not(:first-child){margin-top:26px;font-size:26px}
+@media(max-width:540px){html[data-mvdh-dev-shell] .bidx-auth-modal-overlay{padding:16px;align-items:center}html[data-mvdh-dev-shell] .bidx-auth-modal{padding:44px 22px 24px}html[data-mvdh-dev-shell] .bidx-auth-modal h2{font-size:30px}}
+
+/* Account action matches the adjacent contact action's weight and touch size. */
+html[data-mvdh-dev-shell] .mvdh-account-toggle{min-height:44px;padding:11px 13px;border-color:var(--ink,#153e53);background:var(--ink,#153e53);color:white;font:600 13px/1.4 var(--sans,Arial,sans-serif)}
+html[data-mvdh-dev-shell] .mvdh-account-toggle svg{stroke-width:2}
+html[data-mvdh-dev-shell] .mvdh-account-toggle:hover{background:var(--ink,#153e53);color:white;opacity:.9}
+html[data-mvdh-dev-shell] .mvdh-account-toggle[aria-expanded=true]{background:var(--ink,#153e53);color:white}
+@media(max-width:700px){html[data-mvdh-dev-shell] .mvdh-account-toggle{width:44px;height:44px;min-width:44px;padding:11px;border-radius:100%}}
