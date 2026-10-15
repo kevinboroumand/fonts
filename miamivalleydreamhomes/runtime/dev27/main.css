@@ -1949,16 +1949,16 @@ html[data-mvdh-dev-shell] #modal-container .rg-modal-scheduletour .rag-modal-clo
 .bidx-reference-search .bidx-map-draw-controls button[aria-pressed="true"]{background:#153e53;color:#fff}
 .bidx-reference-search .bidx-map-draw-controls button:disabled{opacity:.55;cursor:not-allowed}
 .bidx-reference-search .bidx-map-draw-controls button:focus-visible{outline:3px solid #b3482e;outline-offset:2px}
-.bidx-reference-search .bidx-map-draw-status{flex-basis:100%;font-size:13px;line-height:1.4;margin:0;max-width:440px}
+.bidx-reference-search .bidx-map-draw-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .bidx-reference-search .bidx-map-draw-status:empty{display:none}
-.bidx-reference-search .bidx-map-drawing{cursor:crosshair}
+.bidx-reference-search .bidx-map-drawing{cursor:crosshair;touch-action:none}
 .bidx-draw-vertex{background:#fff;border:2px solid #153e53;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#153e53;box-shadow:0 1px 4px #0004}
 .bidx-reference-search .bidx-feed-status-select{min-height:44px;max-width:100%;font:inherit;color:#153e53;background:#fff;border:1px solid #153e53;padding:8px 32px 8px 12px}
 
 .vg-listings-status-filter[hidden]{display:none!important}
 .vg-listings-status-filter .bidx-feed-status-select{min-height:44px;font:inherit;color:inherit;background:#fff;border:1px solid currentColor;padding:8px 32px 8px 12px;max-width:100%}
 
-.bidx-reference-search.bidx-drawing-active .leaflet-marker-pane,.bidx-reference-search.bidx-drawing-active .leaflet-marker-pane *{pointer-events:none!important}
+.bidx-reference-search.bidx-drawing-active :is(.bidx-price-marker,.bidx-dot-marker,.leaflet-overlay-pane canvas){opacity:.25!important;pointer-events:none!important}
 
 /* Keep mobile filter chips above the fixed list/map and comfortably tappable. */
 @media(max-width:768px){.bidx-reference-search .bidx-filter-pill{min-height:44px}.bidx-reference-search .bidx-map-draw-controls{bottom:calc(76px + env(safe-area-inset-bottom))}}
@@ -3396,6 +3396,12 @@ html[data-mvdh-dev-shell] body .mvdh-cms-icon {
 
 /* review27-presentation.css */
 /* Current browser review: consistent shared layouts, kept within the dev shell. */
+#mvdh-dev-page .vg-topnav .mvdh-native-site-brand { display:flex;align-items:center;width:156px;height:64px;max-width:100%; }
+#mvdh-dev-page .vg-topnav .mvdh-current-site-logo { display:block;width:100%;height:100%;max-width:100%;object-fit:contain;object-position:left center; }
+@media(max-width:700px) {
+  #mvdh-dev-page .vg-topnav .mvdh-native-site-brand { width:clamp(108px,32vw,132px);height:56px; }
+  #mvdh-dev-page .mvdh-has-site-logo .vg-topnav-inner { gap:10px; }
+}
 @media(min-width:701px) {
   #mvdh-dev-page .vg-home-page .hero-riverwork .riverwork-search { align-self:end; }
 }
