@@ -2673,11 +2673,10 @@ body.is-wireframe :is(.mvdh-article-page .post-content,.mvdh-article-page .post-
 .mvdh-testimonial-play-icon,.mvdh-testimonial-play-label{position:relative;z-index:1}
 .mvdh-testimonial-play-icon{display:grid;place-items:center;width:64px;height:64px;padding-left:4px;background:var(--accent,#b64b2d);border:2px solid #fff;border-radius:50%;font-size:24px;line-height:1}
 .mvdh-testimonial-play-label{padding:6px 12px;background:#112c38}
-.mvdh-testimonial-play:focus-visible,.mvdh-testimonial-watch:focus-visible{outline:3px solid var(--accent,#b64b2d);outline-offset:4px}
+.mvdh-testimonial-play:focus-visible{outline:3px solid var(--accent,#b64b2d);outline-offset:4px}
 .mvdh-testimonial-play:focus-visible{outline-offset:-5px}
 .mvdh-testimonial h3{margin:18px 0 8px;font-size:clamp(20px,2.2vw,26px);line-height:1.3}
-.mvdh-testimonial-status{min-height:1.5em;margin:0 0 8px;color:var(--muted,#456170);font-size:13px;line-height:1.5}
-.mvdh-testimonial-watch{display:inline-flex;align-items:center;min-height:44px;color:var(--ink,#143f54);font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.mvdh-testimonial-status{position:absolute;width:1px;height:1px;min-height:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap;border:0}
 @media(max-width:700px){.mvdh-testimonial-grid{grid-template-columns:minmax(0,1fr);gap:30px}.mvdh-testimonials-intro{margin-bottom:28px}}
 @media(prefers-reduced-motion:reduce){.mvdh-testimonial-play img{transition:none}}
 .mvdh-review-library{background:var(--paper,#f5f3e9)}
